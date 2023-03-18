@@ -10,3 +10,5 @@
     - **try except문 익숙해지기**
   - 10845   (실버4)     : 큐
   - 10866   (실버4)     : 덱
+    - **from collections import deque : deque() 사용법 숙지하기**
+  - 1874    (실버2)     : 스택 수열
