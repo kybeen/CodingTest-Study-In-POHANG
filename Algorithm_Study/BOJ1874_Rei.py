@@ -1,34 +1,39 @@
-# # 1874 - 스택 수열
-# import sys
-# from collections import deque
+# 1874 - 스택 수열
+import sys
+from collections import deque
 
-# n = int(sys.stdin.readline())
-# arr = deque() # 수열
-# my_arr = []
-# result = []
+n = int(sys.stdin.readline())
+arr = deque()
 
-# for i in range(n):
-#     num = int(sys.stdin.readline())
-#     arr.append(num)
+# 수열 입력받기
+for i in range(n):
+    arr.append(int(sys.stdin.readline()))
 
-# my_arr.append(1)
-# result.append("+")
+result = ["+"]
+stk = [1]
+error = 0
+i = 2
 
-# i = 2
-# while True:
-#     if my_arr[-1] == arr[0]:
-#         result.append("-")
-#         my_arr.pop()
-#         arr.popleft()
-#     elif i <= n:
-#         result.append("+")
-#         my_arr.append(i)
-#         i += 1
-#     else:
-#         break
+while True:
+    if error == 1: # 수열을 만들 수 없다면 빠져나옴
+        break
+    if len(stk) == 0 and len(arr) == 0: # 수열을 다 만들었다면 빠져나옴
+        break
 
-# if len(arr) == 0:
-#     for r in result:
-#         print(r)
-# else:
-#     print("NO")
+    while stk == [] or arr[0] > stk[-1]:
+        stk.append(i)
+        result.append("+")
+        i += 1
+    
+    if stk[-1] == arr[0]: # 수열과 스택의 마지막 수가 매칭이 되면 pop을 시켜준다.
+        stk.pop()
+        arr.popleft()
+        result.append("-")
+    else: # 스택의 마지막 수가 현재 수열에서 찾아야 하는 수보다 크면 수열을 만들 수 X
+        error = 1
+
+if error == 1:
+    print("NO")
+else:
+    for r in result:
+        print(r)
