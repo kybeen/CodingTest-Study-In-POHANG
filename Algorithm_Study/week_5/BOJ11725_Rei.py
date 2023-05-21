@@ -4,6 +4,7 @@
 import sys
 sys.setrecursionlimit(10**6) # 최대 재귀 깊이 늘려주기 (안해주면 런타임 에러)
 
+# DFS 재귀함수
 def tree(n):
     for i in range(len(nodes[n])):
         leafIdx = nodes[n][i]
