@@ -39,3 +39,4 @@
   - 11725   (실버2)     : 트리의 부모 찾기
     - **최대 재귀 깊이 조정해줘야함 (https://help.acmicpc.net/judge/rte/RecursionError)**
   - 1991    (실버1)     : 트리 순회
+  - 1141    (실버1)     : 접두사
