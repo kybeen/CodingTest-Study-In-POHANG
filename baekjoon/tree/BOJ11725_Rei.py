@@ -9,7 +9,7 @@ def tree(n):
     for i in range(len(nodes[n])):
         leafIdx = nodes[n][i]
         if result[leafIdx] == 0:
-            result[leafIdx] = n
+            result[leafIdx] = n # 결과 리스트에 부모 노드 저장
             tree(leafIdx)
 
 N = int(sys.stdin.readline())
