@@ -12,19 +12,5 @@ for _ in range(N):
     else:
         lectures[S].append(T)
 
-def dfs(start):
-    if lectures[start] != []:
-        end = lectures[start][0]
-        lectures = lectures[1:]
-        dfs(end)
-    else:
-        result += 1
-    return
-
-result = 0
-start_time = lectures.keys()
-for start in start_time:
-        dfs(start)
-
-
-print(result)
+while True:
+    start_times = lectures.keys() # 시작 시간

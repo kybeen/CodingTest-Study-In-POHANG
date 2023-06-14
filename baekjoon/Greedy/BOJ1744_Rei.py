@@ -9,7 +9,8 @@ for _ in range(N):
 
 negative = [] # 0이하의 수들
 positive = [] # 양수들
-result = 0
+result = 0 # 결과
+# [0이하인 수들] [양수들]로 나누어줌
 for a in arr:
     if a <= 0:
         negative.append(a)
