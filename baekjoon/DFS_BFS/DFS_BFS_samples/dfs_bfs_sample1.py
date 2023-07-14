@@ -12,10 +12,11 @@ result = 0
 # 얼음 틀 전체를 탐색
 for i in range(N):
     for j in range(M):
-        if frame[i][j] == 0:
-            result += 1
-            queue = deque([[i, j]])
-            frame[i][j] = 1
+        if frame[i][j] == 0: # 방문하지 않은 곳을 발견하면
+            result += 1 # 아이스크림 개수 1개 카운트
+            queue = deque([[i, j]]) # 현재 좌표를 큐에 넣어주고
+            frame[i][j] = 1 # 방문 처리
+            # 현재 좌표부터 BFS 시작
             while queue:
                 now = queue.popleft()
                 a, b = now[0], now[1]
@@ -23,6 +24,7 @@ for i in range(N):
                 down = a+1
                 left = b-1
                 right = b+1
+                # 상,하,좌,우 좌표 방문 여부 확인 후, 방문하지 않았으면 큐에 추가하고 방문 처리
                 if up >= 0 and frame[up][b] == 0:
                     queue.append([up, b])
                     frame[up][b] = 1
